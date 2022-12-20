@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: pgadmin-svc
+  namespace: pgadmin
+spec:
+  type: NodePort
+  selector:
+      app: pgadmin
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-config
+  namespace: pgadmin
+  labels:
+    app: pgadmin
+data:
+  PGADMIN_DEFAULT_EMAIL: ember@agapanto.com.co
+  PGADMIN_DEFAULT_PASSWORD: Muyfacil@123

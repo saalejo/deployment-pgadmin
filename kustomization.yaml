@@ -1,0 +1,8 @@
+resources:
+  - name-space.yaml
+  - persistent-volume.yaml
+  - persistent-volume-claim.yaml
+  - pgadmin-config.yaml
+  - deployment.yaml
+  - service.yaml
+  - ingress.yaml

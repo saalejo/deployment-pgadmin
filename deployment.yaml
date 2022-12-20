@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pgadmin-deployment
+  namespace: pgadmin
+  labels:
+    app: pgadmin
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: pgadmin
+  template:
+    metadata:
+      labels:
+        app: pgadmin
+    spec:
+        volumes:
+        - name: pgadmin-pv
+          persistentVolumeClaim:
+            claimName: pgadmin-pvc
+        containers:
+            - name: pgadmin
+              image: dpage/pgadmin4
+              ports:
+                - containerPort: 80
+              envFrom:
+                - configMapRef:
+                    name: pgadmin-config
