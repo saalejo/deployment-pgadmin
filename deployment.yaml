@@ -27,3 +27,6 @@ spec:
               envFrom:
                 - configMapRef:
                     name: pgadmin-config
+              volumeMounts:
+                - mountPath: /var/lib/pgadmin
+                  name: pgadmin-pv
